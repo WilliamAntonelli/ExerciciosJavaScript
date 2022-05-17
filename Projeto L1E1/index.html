@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!-- Crie uma tela com dois Inputs e um botão. Ao clicar no botão o programa 
+    deverá copiar o conteúdo do primeiro input para o segundo. -->
+    <body>
+        <form action="">
+            <label for="idPrimeiro">Texto 01</label><br>
+            <input type="text" id="idPrimeiro"><br><br>
+
+            <label for="idSegundo">Texto 02</label><br>
+            <input type="text" id="idSegundo"><br><br>
+
+            <input type="button" value="Copiar" onclick="dados()">
+        </form>
+        <script>
+            var primeiro
+
+            function dados() {
+                primeiro = document.getElementById("idPrimeiro").value
+
+                document.getElementById("idSegundo").value = primeiro
+            }
+        </script>
+    </body>
+</html>

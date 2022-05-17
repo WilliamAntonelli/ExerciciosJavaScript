@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Crie um programa para receber 4 notas e calcular a média-->
+    <body>
+        <form action="">
+            <label for="idNota1">Nota 01</label><br>
+            <input type="text" id="idNota1" name="nmNota1"><br><br><br>
+
+            <label for="idNota2">Nota 02</label><br>
+            <input type="text" id="idNota2" name="nmNota2"><br><br><br>
+
+            <label for="idNota3">Nota 03</label><br>
+            <input type="text" id="idNota3" name="nmNota3"><br><br><br>
+
+            <label for="idNota4">Nota 04</label><br>
+            <input type="text" id="idNota4" name="nmNota4"><br><br><br>
+
+
+            <output id="idMedia"></output><br><br>
+
+            <input type="button" value="Média" onclick="media()">
+
+        </form>
+        <script>
+            function media() {
+     
+            var nota1 = Number(document.getElementById("idNota1").value)
+            var nota2 = Number(document.getElementById("idNota2").value)
+            var nota3 = Number(document.getElementById("idNota3").value)
+            var nota4 = Number(document.getElementById("idNota4").value)
+
+            var media = (nota1 + nota2 + nota3 + nota4)/4    
+           
+            document.getElementById("idMedia").value = "Média = " + media
+            }
+        </script>
+    </body>
+</html>

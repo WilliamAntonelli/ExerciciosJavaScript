@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Crie um programa para ler dois números da tela, somá-los e mostrar 
+            o resultado em um terceiro Input.-->
+    <body>
+        <form action="">
+            <label for="IdValor1">Valor 01:</label><br>
+            <input type="number" id="idValor1" name="nmValor1"><br><br>
+
+            <label for="idValor2">Valor 02:</label><br>
+            <input type="number" id="idValor2" name="nmValor2"><br><br>
+
+            <label for="idResultado">Resultado:</label><br>
+            <input type="text" id="idResultado" name="nmResultado"><br><br>
+
+            <input type="button" value="Somar" onclick="somar()">
+        </form>
+        <script>
+
+            function somar() {
+
+                var numero1 = Number(document.getElementById("idValor1").value) 
+                var numero2 = Number(document.getElementById("idValor2").value) 
+
+                var resultado = numero1 + numero2
+
+                document.getElementById("idResultado").value = resultado
+
+            }
+        </script>
+    </body>
+</html>

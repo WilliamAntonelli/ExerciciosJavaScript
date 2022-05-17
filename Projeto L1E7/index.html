@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Um comerciante revende diversas mercadorias com uma margem de lucro líquido de 35%. 
+    O comerciante deseja um programa que calcule o preço de venda e o valor do lucro líquido 
+    de cada um de seus produtos.
+    A fórmula para obter o preço de venda é:
+    Preço de compra + custos fixos + 35% = preço de venda-->
+    <body>
+        <form action="">
+            <label for="idPreCompra">Preço de Compra</label><br>
+            <input type="text" id="idPreCompra" name="nmPreCompra"><br><br><br>
+
+            <label for="idCustosFixos">Custos Fixos</label><br>
+            <input type="text" id="idCustosFixos" name="nmCustosFixos"><br><br><br>
+
+            <output id="idPrecoVenda"></output><br><br>
+            <output id="idLucro"></output><br><br>
+
+            <input type="button" value="Calcular" onclick="calculo()">
+
+        </form>
+        <script>
+            function calculo() {
+                var preco1 = Number(document.getElementById("idPreCompra").value)
+                var custos = Number(document.getElementById("idCustosFixos").value)
+
+                var venda = (preco1 + custos)*1.35
+
+                document.getElementById("idPrecoVenda").value = "Preço de venda: " + venda
+                document.getElementById("idLucro").value = "Lucro: " + (venda - preco1 - custos)
+            }
+        </script>
+    </body>
+</html>

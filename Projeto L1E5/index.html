@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Tendo como dados de entrada a altura e o sexo de uma pessoa, 
+    construa um programa que calcule seu peso ideal, utilizando as seguintes fórmulas:
+
+    Para homens: (72.7*h) - 58
+    Para mulheres: (62.1*h) - 44.7 (h = altura)-->
+    <body>
+        <form action="">
+            <label for="idAltura">Altura</label><br>
+            <input type="number" id="idAltura" name="nmAltura" step="0.01"><br><br>
+
+            <p>Sexo</p>
+            <input type="radio" id="idMasculino" name="nmSexo">
+            <label for="idMasculino">Masculino</label>
+            <input type="radio" id="idFeminino" name="nmSexo">
+            <label for="idFeminino">Feminino</label><br><br><br>
+
+            <input type="button" value="Calcular" onclick="formula()"><br><br>
+
+            <label for="idIdeal">Peso Ideal</label><br>
+            <input type="text" id="idIdeal">            
+        </form>
+        <script>
+            function formula() {
+                var altura = Number(document.getElementById("idAltura").value)
+                var masculino = document.getElementById("idMasculino").checked
+
+                if (masculino==true) {
+                   var ideal = (72.7*altura) - 58
+                }
+                
+                else{
+                    var ideal = (62.1*altura) - 44.7 
+                }
+    
+                document.getElementById("idIdeal").value = ideal.toFixed(2)
+            }
+        </script>
+    </body>
+</html>
