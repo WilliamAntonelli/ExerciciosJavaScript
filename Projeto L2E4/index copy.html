@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Crie um algoritmo que permita cadastrar um cliente de um banco: nome 
+        do correntista, o nome do banco, o número da conta, o limite de credito 
+        e saldo atual. Realize operações de crédito e débito na conta específica 
+        e, no final, imprima o saldo final do cliente.-->
+    <body>
+        <form action="">
+            <label for="idNome">Nome</label><br>
+            <input type="text" id="idNome" name="nmName"><br><br>
+
+            <label for="idBanco">Banco</label><br>
+            <input type="text" id="idBanco" name="nmBanco"><br><br>
+
+            <label for="idConta">Conta</label><br>
+            <input type="text" id="idConta" name="nmConta"><br><br>
+
+            <label for="idLimite">Limite de Crédito</label><br>
+            <input type="number" id="idLimite" name="nmLimite" disabled><br><br>
+
+            <label for="idAtual">Saldo Atual</label><br>
+            <input type="number" id="idAtual" name="nmAtual" disabled><br><br>
+
+            <input type="radio" id="idDeposito" name="nmOperação" checked>
+            <label for="idDeposito">Depositar</label>
+            <input type="radio" id="idSaque" name="nmOperação">
+            <label for="idSaque">Sacar</label><br><br>
+
+            <label for="idValor">Valor</label><br>
+            <input type="number" id="idValor" name="nmValor" step="0.01"><br><br>
+            
+
+            <output id="idSaida">Saldo final:</output><br><br>
+
+            <input type="button" value="Operação" onclick="saldo()"> <br><br>
+
+            <output id="idErro"></output>
+
+        </form>
+        <script>
+            document.getElementById("idLimite").value = 1000
+            document.getElementById("idAtual").value = 0
+            
+            function saldo() {
+                var atual = Number(document.getElementById("idAtual").value)
+                var deposito = Number(document.getElementById("idDeposito").checked)
+                var valor = Number(document.getElementById("idValor").value)
+                var limite = 1000
+                
+                if (deposito == true) {
+                    atual = atual + valor
+                } else {
+                    atual = atual - valor
+                }
+
+                limite = atual + limite
+
+                if (limite < 0) {
+                document.getElementById("idErro").value = "Sem limite disponível"
+                } else {
+                document.getElementById("idSaida").value = "Saldo: " + atual
+                document.getElementById("idAtual").value = atual
+                }
+               
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua 
+    situação em relação ao alistamento militar.
+    -Se estiver antes dos 18 anos, mostre em quantos anos faltam para o alistamento.
+    -Se já tiver depois dos 18 anos, mostre quantos anos já se passaram do alistamento.-->
+    <body>
+        <form action="">
+            <label for="idNas">Ano de Nascimento</label><br><br>
+            <input type="number" id="idNas" name="nmNas"><br><br>
+
+            <output id="idRes"></output><br><br>
+
+            <input type="button" value="Situação" onclick="final()">
+        </form>
+        <script>
+            function final() {
+                var ano = Number(document.getElementById("idNas").value)
+                var fim = 2022 - ano
+                var resultado
+
+                if (fim == 18) {
+                    resultado = "Ano de Alistamento"
+                }
+                if (fim > 18) {
+                    resultado = "Passaram " + (fim - 18) + " anos"
+                }
+                if (fim < 18) {
+                    resultado = "Faltam " + (18 - fim) + " anos"
+                }
+                document.getElementById("idRes").value = resultado
+            }
+
+        </script>
+    </body>
+</html>

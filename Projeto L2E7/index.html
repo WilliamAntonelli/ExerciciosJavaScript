@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--No algoritmo do exemplo anterior, percebe-se que apenas se o aluno 
+        digitar Brasília a resposta será correta. Mas, se o aluno digitar 
+        brasília com “b” minúsculo? Resolva o exemplo anterior para aceitar 
+        tal situação (apenas usando estruturas de seleção).-->
+    <body>
+        <form action="">
+            <label for="idCapital">Qual a capital do Brasil?</label><br><br>
+            <input type="text" id="idCapital" name="nmCapital"><br><br>
+
+            <output id="idSaida"></output><br><br>
+            <input type="button" value="Resultado" onclick="ver()">
+        </form>
+        <script>
+            function ver() {
+                var resposta = document.getElementById("idCapital").value
+                var final
+
+                if (resposta == "Brasília" || resposta == "brasília") {
+                    final = "Certa resposta"
+                } else {
+                    final = "Resposta errada"
+                }
+
+                document.getElementById("idSaida").value = final
+            }
+        </script>
+    </body>
+</html>

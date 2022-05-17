@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Crie um programa que leia o tamanho de três segmentos de reta. 
+        Analise seus comprimentos e diga se é possível formar um triângulo 
+        com essas retas. Matematicamente, para três segmentos formarem um 
+        triângulo, o comprimento de cada lado deve ser menor que a soma dos outros dois.-->
+    <body>
+        <form action="">
+  
+            <label for="idLado1">Tamanho do lado 01</label><br>
+            <input type="number" id="idLado1" name="nmLado1"><br><br>
+
+            <label for="idLado2">Tamanho do lado 02</label><br>
+            <input type="number" id="idLado2" name="nmLado2"><br><br>
+
+            <label for="idLado3">Tamanho do lado 03</label><br>
+            <input type="number" id="idLado3" name="nmLado3"><br><br>
+
+            <output id="idSaida">Resultado</output><br><br>
+
+            <input type="button" value="Calcular" onclick="valor()">
+
+        </form>
+        <script>
+            function valor() {
+                var lado1 = Number(document.getElementById("idLado1").value)
+                var lado2 = Number(document.getElementById("idLado2").value)
+                var lado3 = Number(document.getElementById("idLado3").value)
+
+                var soma1 = lado2 + lado3
+                var soma2 = lado1 + lado3
+                var soma3 = lado1 + lado2
+                
+                if (lado1 < soma1 && lado2 < soma2 && lado3 < soma3) {
+                    fim = "É um triângulo"
+                } else {
+                    fim = "Não é um triângulo"
+                }
+
+                document.getElementById("idSaida").value = fim 
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Crie um algoritmo que permita ao aluno responder qual é a capital do 
+    Brasil. O algoritmo deve dizer se a resposta está certa ou errada.-->
+    <body>
+        <form action="">
+            <label for="idCapital">Qual a capital do Brasil?</label><br><br>
+            <input type="text" id="idCapital" name="nmCapital"><br><br>
+
+            <output id="idSaida"></output><br><br>
+            <input type="button" value="Resultado" onclick="ver()">
+        </form>
+        <script>
+            function ver() {
+                var resposta = document.getElementById("idCapital").value
+                var final
+
+                if (resposta == "Brasília") {
+                    final = "Certa resposta"
+                } else {
+                    final = "Resposta errada"
+                }
+
+                document.getElementById("idSaida").value = final
+            }
+        </script>
+    </body>
+</html>

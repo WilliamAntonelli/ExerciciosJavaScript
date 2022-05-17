@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Faça um programa para testar a idade da pessoa e descubra se ela pode dirigir ou não.-->
+    <body>
+        <form action="">
+            <label for="idIdade">Digite a idade</label><br>
+            <input type="number" id="idIdade" name="nmIdade"><br><br>
+
+            <output id="idSaida">Resultado:</output><br><br>
+
+            <input type="button" value="Ver resultado" onclick="ver()">
+        </form>
+        <script>
+            function ver() {
+
+                var idade = Number(document.getElementById("idIdade").value)
+                var msg
+                
+                if (idade >= 18) {
+                    msg = "Pode dirigir"
+                } else {
+                    msg = "Não pode dirigir"
+                }
+                document.getElementById("idSaida").value = "Resultado: " + msg
+            }
+        </script>
+    </body>
+</html>

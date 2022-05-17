@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Crie um algoritmo que permita cadastrar e imprimir a temperatura dos 
+    últimos 3 dias. Calcule a média e descubra se a temperatura de hoje está acima ou abaixo da média.-->
+    <body>
+        <form action="">
+            <label for="idDia1">Temperatura do dia 01</label><br>
+            <input type="number" id="idDia1" name="nmDia1" step="0,1"><br><br>
+
+            <label for="idDia2">Temperatura do dia 02</label><br>
+            <input type="number" id="idDia2" name="nmDia2" step="0,1"><br><br>
+
+            <label for="idDia3">Temperatura do dia 03</label><br>
+            <input type="number" id="idDia3" name="nmDia3" step="0,1"><br><br>
+
+            <label for="idHoje">Temperatura de hoje</label><br>
+            <input type="number" id="idHoje" name="nmHoje" step="0,1"><br><br>
+
+            <output id="idMedia">Média:</output><br><br>
+
+            <input type="button" value="Média" onclick="temp()">
+        </form>
+        <script>
+            function temp() {
+                var dia1 = Number(document.getElementById("idDia1").value)
+                var dia2 = Number(document.getElementById("idDia2").value)
+                var dia3 = Number(document.getElementById("idDia3").value)
+                var hoje = Number(document.getElementById("idHoje").value)
+
+
+                var media = (dia1 + dia2 + dia3)/3
+                var saida
+
+                if (hoje > media) {
+                    saida = " - A temperatura hoje está acima da média"
+                } else {
+                    if (hoje < media) {
+                        saida = " - A temperatura hoje está abaixo da média"
+                    } else {
+                        saida = " - A temperatura hoje está igual a média"
+                    }
+                }
+                document.getElementById("idMedia").value ="Média: " + media.toFixed(2) + saida
+            }
+        </script>
+    </body>
+</html>
