@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Elabore um algoritmo para entrar com três números e imprimi-los 
+    em ordem decrescente (suponha números diferentes).-->
+    <body>
+        <form action="">
+            <fieldset>
+                <legend>Entre com 3 números diferentes</legend>
+
+                <label for="idNum1">Número 01</label><br>
+                <input type="number" id="idNum1" name="nmNum1"><br><br>
+
+                <label for="idNum2">Número 02</label><br>
+                <input type="number" id="idNum2" name="nmNum2"><br><br>
+
+                <label for="idNum3">Número 03</label><br>
+                <input type="number" id="idNum3" name="nmNum3"><br><br>
+
+                <output id="idSaida">Ordem decrescente</output><br><br>
+
+                <input type="button" value="calcular" onclick="valor()">
+
+            </fieldset>
+        </form>
+        <script>
+            function valor() {
+                var num1 = Number(document.getElementById("idNum1").value)
+                var num2 = Number(document.getElementById("idNum2").value)
+                var num3 = Number(document.getElementById("idNum3").value)
+
+                if (num1 > num2 && num2 > num3) {
+                    document.getElementById("idSaida").value = "Ordem decrescente : " + num1 + " " + num2 + " " + num3
+                }
+                else if (num1 > num3 && num3 > num2) {
+                    document.getElementById("idSaida").value = "Ordem decrescente : " + num1 + " " + num3 + " " + num2
+                }
+                else if (num2 > num1 && num1 > num3) {
+                    document.getElementById("idSaida").value = "Ordem decrescente : " + num2 + " " + num1 + " " + num3
+                }
+                else if (num2 > num3 && num3 > num1) {
+                    document.getElementById("idSaida").value = "Ordem decrescente : " + num2 + " " + num3 + " " + num1
+                }
+                else if (num3 > num2 && num2 > num1) {
+                    document.getElementById("idSaida").value = "Ordem decrescente : " + num3 + " " + num2 + " " + num1
+                }
+                else if (num3 > num1 && num1 > num2) {
+                    document.getElementById("idSaida").value = "Ordem decrescente : " + num3 + " " + num1 + " " + num2
+                }
+            }
+        </script>
+    </body>
+</html>

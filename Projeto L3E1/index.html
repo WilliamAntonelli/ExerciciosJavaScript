@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Elabore um algoritmo que permita a entrada de dois números 
+    diferentes e verifique qual deles é o maior.-->
+    <body>
+        <form action="">
+            <label for="idNumero1">Número 01</label><br>
+            <input type="number" id="idNumero1" name="nmNumero1"><br><br>
+
+            <label for="idNumero2">Número 02</label><br>
+            <input type="number" id="idNumero2" name="nmNumero2"><br><br>
+
+            <output id="idSaida">Número maior</output><br><br>
+
+            <input type="button" value="Ver Resultado" onclick="resultado()">
+        
+        </form>
+        <script>
+            function resultado() {
+               var num1 = Number(document.getElementById("idNumero1").value)
+               var num2 = Number(document.getElementById("idNumero2").value) 
+
+                if (num1 > num2) {
+                    document.getElementById("idSaida").value = "O número " + num1 + " é o maior!"
+                }
+                if (num1 < num2) {
+                    document.getElementById("idSaida").value = "O número " + num2 + " é o maior!"
+                }
+                if (num1 == num2) {
+                    document.getElementById("idSaida").value = "Os números são iguais!"
+                } 
+            }
+        </script>
+    </body>
+</html>

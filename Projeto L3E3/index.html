@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Elabore um algoritmo para Entrar com um número e imprimir 
+        uma das mensagens: maior do que 20, igual a 20 ou menor do que 20.-->
+    <body>
+        <form action="">
+            <label for="idNum1">Número 01</label><br>
+            <input type="number" id="idNum1" name="nmNum1"><br><br>
+
+            <output id="idSaida">Resultado</output><br><br>
+
+            <input type="button" value="Enviar" onclick="enviar()">
+        </form>
+        <script>
+            function enviar() {
+                var num = Number(document.getElementById("idNum1").value)
+
+                if (num > 20) {
+                    document.getElementById("idSaida").value = "Maior do que 20"
+                }
+                if (num == 20) {
+                    document.getElementById("idSaida").value = "Igual 20"
+                }
+                if (num < 20) {
+                    document.getElementById("idSaida").value = "Menor do que 20"
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Usando o projeto HTML-L1E5 (Tela de Login) como base, crie um programa para autenticação de usuários.
+    Salve 3 usuários em variáveis pré-inicializadas
+        userId	senha
+        E21Aluno1	Trocar123
+        E21Aluno2	Senha@123
+        E21Aluno3	123Trocar
+    Regras:
+    Se o usuário informar o userId e senha corretamente o sistema deverá exibir a mensagem:
+    "Acesso Permitido"
+    Se o userId não estiver correto, exibir:
+    "Usuário não cadastrado"
+    Se o usuário estiver correto, mas a senha estiver errada, exibir:
+    "Senha incorreta"
+    Após 3 tentativas incorretas o programa deverá bloquear os campos senha e usuário e exibir 
+    a seguinte mensagem:
+    "Usuário bloqueado"-->
+    <body>
+        <form action="">
+            <label for="idUsuario">Usuário:</label><br>
+            <input type="text" id="idUsuario" name="nmUsuario"><br><br>
+            
+            <label for="idSenha">Senha:</label><br>
+            <input type="password" id="idSenha" name="nmSenha"><br><br>
+            
+            <input type="button" value="Login" onclick="login()"><br><br>
+            
+            <output id="idSaida"></output>
+        </form>
+
+        <script>
+            var id1 = "E21Aluno1"
+            var id2 = "E21Aluno2"
+            var id3 = "E21Aluno3"
+
+            var senha1 = "Trocar123"
+            var senha2 = "Senha@123"
+            var senha3 = "123Trocar"
+            var tentativa = 0
+
+            function login() {
+
+                let usuario = document.querySelector("#idUsuario").value 
+                let senha = document.querySelector("#idSenha").value 
+                let saida = document.querySelector("#idSaida")
+
+                    if (((usuario == id1) && (senha == senha1)) 
+                    || ((usuario == id2) && (senha == senha2))
+                    || ((usuario == id3) && (senha == senha3))) {
+                        saida.value = "Acesso Permitido"}
+
+                    if ((usuario != id1)
+                    &&  (usuario != id2)
+                    &&  (usuario != id3)) {
+                        saida.value = "Usuário Não Cadastrado"}
+
+
+                    
+                        if (((usuario == id1) && (senha != senha1))
+                        || ((usuario == id2) && (senha != senha2))
+                        || ((usuario == id3) && (senha != senha3))) {
+
+                            if (tentativa < 2) {
+                                saida.value = "Senha Incorreta"
+                                tentativa++
+        
+                            } else {
+                                saida.value = "Usuário Bloqueado"
+                                document.querySelector("#idSenha").hidden = true}}
+
+            }                    
+        </script>
+        
+    </body>
+</html>
