@@ -1,1 +1,2 @@
 # ExerciciosJavaScript
+teste
