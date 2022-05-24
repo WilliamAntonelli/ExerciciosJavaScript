@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Construa uma calculadora. O programa deverá receber 2 números e o 
+    caractere equivalente a um dos operadores aritméticos. Efetuar a 
+    operação aritmética correspondente e apresentar o resultado.-->
+    <body>
+        <form action="">
+            <input type="number" id="idNum1" name="nmNum1">
+            <label for="idNum1">Número 01</label><br><br>
+
+            <input type="text" id="idSinal" name="nmSinal">
+            <label for="idSinal">Operação</label><br><br>
+            
+            <input type="number" id="idNum2" name="nmNum2">
+            <label for="idNum2">Número 02</label><br><br>
+            
+            <output id="idSaida">Valor</output><br><br>
+
+            <input type="button" value="Calcular" onclick="calculo()">
+        </form>
+        <script>
+            function calculo() {
+                var num1 = Number(document.querySelector("#idNum1").value)
+                var num2 = Number(document.querySelector("#idNum2").value)
+                var ope = document.querySelector("#idSinal").value
+                var saida
+
+            switch (ope) {
+                case "+":
+                    saida = num1 + num2;
+                    break;
+                
+                case "-":
+                    saida = num1 - num2;
+                    break;
+
+                case "*":
+                    saida = num1 * num2;
+                    break;
+            
+                case "/":
+                    saida = num1 / num2;
+                    break;}
+
+                document.querySelector("#idSaida").value = saida 
+
+                }
+        </script>
+    </body>
+</html>
