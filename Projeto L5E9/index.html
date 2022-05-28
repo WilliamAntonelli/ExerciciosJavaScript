@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+            
+            <label for="idTemperatura">Digite a temparatura para ser convertida:</label><br>
+            <input type="number" id="idTemperatura" name="nmTemperatura" step="0.01">
+
+            <select name="nmUnidadeTemp" id="idUnidadeTemp" size="1">
+                <option value="celsius">°C</option>
+                <option value="fahrenheit">°F</option>
+                <option value="kelvin">K</option>
+            </select><br><br>
+           
+            <input type="button" value="Converter" onclick="conversor()"><br><br>
+           
+            <output id="idOut"></output>
+        
+        </form>
+
+        <script>
+
+            function conversor() {
+                
+                let temperatura = Number(document.querySelector("#idTemperatura").value)
+                let unidade = document.querySelector("#idUnidadeTemp").value
+                let temperaturaC 
+                let temperaturaF 
+                let temperaturaK 
+                let saida 
+        
+                if (unidade == "celsius") {
+                    temperaturaC = temperatura
+                    temperaturaF = ((9 * temperatura) + 160) / 5
+                    temperaturaK = temperatura +273.15
+                    saida = temperaturaC + "°C é igual a " +  temperaturaF.toFixed(2) + "°F e " + temperaturaK.toFixed(2) + "K"
+
+                    } else if (unidade == "fahrenheit") {
+                        temperaturaF = temperatura
+                        temperaturaC = ((temperatura - 32) * 5) / 9
+                        temperaturaK = (((temperatura - 32) * 5) / 9) + 273.15
+                        saida = temperaturaF + "°F é igual a " +  temperaturaC.toFixed(2) + "°C e " + temperaturaK.toFixed(2) + "K"
+
+                        } else {
+                            temperaturaK = temperatura
+                            temperaturaF = ((temperatura - 273.15) * 1.8) + 32
+                            temperaturaC = temperatura - 273.15
+                            saida = temperaturaK + "K é igual a " +  temperaturaF.toFixed(2) + "°F e " + temperaturaC.toFixed(2) + "°C"
+                    }{
+                       
+                }
+
+                document.querySelector("#idOut").value = saida
+
+            }
+        </script>
+
+    </body>
+</html>

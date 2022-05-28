@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+            
+            <label for="idTemperatura">Digite a temparatura em graus Celsius:</label><br>
+            <input type="number" id="idTemperatura" name="nmTemperatura" step="0.1"><br><br>
+           
+            <input type="button" value="Converter para Fahrenheit" onclick="conversor()"><br><br>
+           
+            <output id="idOut"></output>
+        
+        </form>
+
+        <script>
+
+            function conversor() {
+                
+                let temperaturaC = Number(document.querySelector("#idTemperatura").value)
+                let temperaturaF 
+
+                temperaturaF = ((9 * temperaturaC) + 160) / 5
+
+                document.querySelector("#idOut").value = temperaturaC + "C é igual a " + temperaturaF.toFixed(1) + "F"
+
+            }
+        </script>
+
+    </body>
+</html>

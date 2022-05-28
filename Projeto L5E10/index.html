@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+
+            <label for="idValor1">Conversor de Moedas</label><br><br>
+            <input type="number" id="idValor1" name="nmValor1" step="0.01">
+
+            <select name="nmMoeda1" id="idMoeda1" size="1">
+                <option value="real">Real</option>
+                <option value="americano">Dólar Americano</option>
+                <option value="euro">Euro</option>
+                <option value="libra">Libra Esterlina</option>
+                <option value="canadense">Dólar Canadense</option>
+            </select>
+
+            <input type="number" id="idValor2" name="nmValor2" disabled>
+
+            <select name="nmMoeda2" id="idMoeda2" size="1">
+                <option value="americano">Dólar Americano</option>
+                <option value="real">Real</option>
+                <option value="euro">Euro</option>
+                <option value="libra">Libra Esterlina</option>
+                <option value="canadense">Dólar Canadense</option>
+            </select><br><br>
+           
+            <input type="button" value="Converter" onclick="conversor()"><br><br>
+           
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+            
+            /*
+            Valores de referência (28/05/2022): 1 dólar americano = 4,73 reais, 0,93 euros, 
+            0,79 libras esterlinas e 1,27 dolares canadenses. Valores das moedas em dolar:
+            real = 0,21; euro = 1,07; Libra Esterlina = 1,26; Dolar Canadense = 0,79.
+            */
+
+            function conversor() {
+                
+                let valor = Number(document.querySelector("#idValor1").value)
+                let moeda1 = document.getElementById("idMoeda1").value
+                let moeda2 = document.getElementById("idMoeda2").value
+                let saida = valor
+        
+                switch (moeda1) {
+                    case "real":
+                        saida = valor * 0.21
+                        break;
+
+                    case "euro":
+                        saida = valor * 1.07
+                        break;
+
+                    case "libra":
+                        saida = valor * 1.26
+                        break;
+
+                    case "canadense":
+                        saida = valor * 0.79
+                        break;
+
+                }
+
+                switch (moeda2) {
+                    case "real":
+                        saida = saida * 4.73
+                        break;
+
+                    case "euro":
+                        saida = saida * 0.93
+                        break;
+
+                    case "libra":
+                        saida = saida * 0.79
+                        break;
+
+                    case "canadense":
+                        saida = saida * 1.27
+                        break;
+
+                }
+
+                document.querySelector("#idValor2").value = saida.toFixed(2)
+
+            }
+           
+        </script>
+
+    </body>
+</html>

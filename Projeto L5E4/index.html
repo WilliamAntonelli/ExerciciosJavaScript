@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+
+            <input type="button" value="Mostrar" onclick="mostrar()"><br><br>
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            function mostrar() {
+                
+                let fibo1 = 0
+                let fibo2 = 1
+                let fibo3
+                let numeros = 0
+
+                while (numeros < 10) {
+                    console.log(fibo2);
+                    fibo3 = fibo2 + fibo1
+                    fibo1 = fibo2
+                    fibo2 = fibo3
+                    numeros++
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+            
+            <label for="idNumero">Adivinhe um Número:</label><br>
+            <input type="number" id="idNumero" name="nmNumero"><br><br>
+           
+            <input type="button" value="Resultado" onclick="resultado()"><br>
+           
+            <output id="idOut"></output>
+        
+        </form>
+    
+        <script>
+           
+            var sorteado = parseInt(Math.random() * 10)
+            sorteado++
+
+            console.log(sorteado);
+
+            var tentativa = 0
+            var saida = document.getElementById("idOut")
+    
+            function resultado() {
+    
+    
+              
+                let apostado = Number(document.getElementById("idNumero").value)
+              
+                tentativa++
+               
+                if (apostado == sorteado) {
+                    saida.value = "Acertou"
+                    document.getElementById("idNumero").disabled = true
+                } else {
+                    if (tentativa < 3) {
+                        if (sorteado < apostado) {
+                            saida.value = "O número sorteado é menor"
+                        } else {
+                            saida.value = "O número sorteado é maior"
+                        }
+                    } else {
+                        saida.value = "Jogo encerrado, você errou as três tentativas."
+                        document.getElementById("idNumero").disabled = true
+                    }
+                }
+            }
+    
+        </script>
+    
+    </body>
+</html>

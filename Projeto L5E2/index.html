@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+
+            <label for="idNum1">Valor Inicial</label><br>
+            <input type="number" id="idNum1" name="nmNum1"><br><br>
+
+            <label for="idNum2">Valor Final</label><br>
+            <input type="number" id="idNum2" name="nmNum2"><br><br>
+
+            <input type="button" value="Imprimir números primos" onclick="primos()"><br><br>
+
+        </form>
+
+        <script>
+
+            function primos() {
+                let inicio = Number(document.getElementById("idNum1").value)
+                let fim = Number(document.getElementById("idNum2").value)
+
+                let primo = true
+                for (let n = inicio; n < (fim + 1); n++) {
+                    for (let i = 2; i < n; i++) {
+                        if (n % i == 0) {
+                            primo = false
+                        } 
+                    }  
+                    if (primo) {
+                        console.log(n + " é Primo");
+                    }
+                    primo = true
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

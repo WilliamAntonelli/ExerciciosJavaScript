@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+
+            <input type="button" value="Sortear" onclick="sorteio()"><br><br>
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            function sorteio() {
+                let maior = 0
+                let divisiveis = 0
+                let sorteados = ""
+
+                for (let i = 0; i < 20; i++) {
+                    let num = parseInt(Math.random() * 11)
+
+                    if (num > 5) {
+                        maior++
+                    }
+
+                    if ((num % 3) == 0) {
+                        divisiveis++
+                    }
+
+                    sorteados = sorteados + num + " "
+                    
+                }
+
+                console.log("Números sorteados: " + sorteados);
+                console.log("Números maiores que 5: " + maior);
+                console.log("Números divisiveis por 3: " + divisiveis);
+
+            }
+        </script>
+    </body>
+</html>

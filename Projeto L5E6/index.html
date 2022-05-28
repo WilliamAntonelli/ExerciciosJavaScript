@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+            <label for="idIdade">Idade</label><br>
+            <input type="number" id="idIdade" name="nmIdade"><br><br>
+    
+            <input type="button" value="Calcular" onclick="idades()"><br><br>
+            
+            <output id="idMedia"></output><br>
+     
+            <output id="idMaior18"></output><br>
+      
+            <output id="idMenor5"></output><br>
+           
+            <output id="idMaior"></output><br>
+           
+        </form>
+
+        <script>
+
+            var soma = 0 
+            var conta = 0 
+            var media = 0
+            var maior18 = 0 
+            var menor5 = 0
+            var maior = -1
+
+            function idades() {
+               
+                let idade = Number(document.querySelector("#idIdade").value)
+               
+                soma = soma + idade
+                conta++ 
+             
+                media = (soma/conta).toFixed(2)
+                
+                if (idade > 18) {
+                    maior18++
+                }
+                
+                if (idade < 5) {
+                    menor5++
+                }
+                
+                if (idade > maior) {
+                    maior = idade
+                }
+                
+
+                document.querySelector("#idMedia").value = "Média de idades: " + media
+                document.querySelector("#idMaior18").value = "Pessoas maiores de 18 anos: " + maior18
+                document.querySelector("#idMenor5").value = "Pessoas com menos de 05 anos: " + menor5
+                document.querySelector("#idMaior").value = "Maior idade: " + maior
+                
+            }
+
+        </script>
+    </body>
+</html>
