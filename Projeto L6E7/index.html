@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Faça um programa que leia nomes de pessoas e guarde-os em um vetor. No final, 
+        mostre uma listagem com todos os nomes informados, na ordem inversa 
+        daquela em que eles foram informados. -->
+    <body>
+ 
+        <form action="">
+
+            <input type="text" id="idNome" name="nmNome" placeholder="Nome da pessoa"><br><br>
+
+            <input type="button" value="Guardar nome" onclick="guardar()">
+            <input type="button" value="Mostrar nomes na ordem inversa" onclick="inverterNomes()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var allNames = []
+            var invertidos = []
+
+            function guardar() {
+                let nome = document.querySelector("#idNome").value
+                allNames.push(nome)
+                console.log(allNames);
+            }
+
+            function inverterNomes() {
+
+                for (let i = 0; i < allNames.length; i++) {
+                    invertidos.unshift(allNames[i])
+                }
+
+                document.querySelector("#idOut").value = invertidos
+            }
+
+            
+        </script>
+
+    </body>
+</html>

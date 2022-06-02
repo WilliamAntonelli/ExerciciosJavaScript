@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Faça um algoritmo que preencha um vetor de 30 posições com números entre 1 e 15 
+        sorteados pelo computador. Depois disso, peça para o usuário digitar um número 
+        (chave) e seu programa deve mostrar em que posições essa chave foi encontrada. 
+        Mostre também quantas vezes a chave foi sorteada. -->
+    <body>
+        
+        <form action="">
+
+            <input type="number" id="idNumber" name="nmname" placeholder="Digite um número"><br><br>
+
+            <input type="button" value="Mostrar" onclick="mostrar()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var sorteados = []
+            var iguais = 0
+            var local = []
+
+            for (let i = 0; i < 30; i++) {
+                sorteados.push(parseInt((Math.random() * 15) + 1))
+                
+            }
+
+            function mostrar() {
+                let numero = Number(document.querySelector("#idNumber").value)
+                console.log(numero);
+                for (let i = 0; i < sorteados.length; i++) {
+                    if (numero == sorteados[i]) {
+                        iguais++
+                        local.push(i)
+        
+                    }
+                }
+                console.log(sorteados);
+                document.querySelector("#idOut").value = "Foi sorteado " + iguais + " vezes. E as posições são: " + local
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Crie um programa que preencha automaticamente um vetor numérico com 7 números 
+        gerados aleatoriamente pelo computador e depois mostre os valores gerados na tela. -->
+    <body>
+        
+        <form action="">
+
+            <input type="button" value="mostar" onclick="mostrar()">
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var numeros = []
+
+            function mostrar() {
+                for (let i = 0; i < 7; i++) {
+            
+                numeros.push(parseInt(Math.random() * 1001))
+        
+            }
+  
+            document.getElementById("idOut").value = numeros
+                
+            }
+
+        </script>
+
+    </body>
+</html>

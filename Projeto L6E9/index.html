@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Desenvolva um programa que leia números inteiros e guarde-os em um vetor. 
+        No final, mostre quais são os números pares que foram digitados e 
+        em que posições eles estão armazenados.-->
+    <body>
+        
+        <form action="">
+
+            <input type="number" id="idNum" name="nmNum" placeholder="Número"><br><br>
+
+            <input type="button" value="Guardar número" onclick="guardar()">
+            <input type="button" value="Mostrar números pares" onclick="mostrar()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var numeros = []
+            var pares = []
+
+            function guardar() {
+                let num = parseInt(document.querySelector("#idNum").value)
+                numeros.push(num)
+
+            }
+
+            function mostrar() {
+
+                for (let i = 0; i < numeros.length; i++) {
+                    if ((numeros[i] % 2) == 0) {
+                        pares.push(numeros[i])
+                    }
+                }
+
+            document.querySelector("#idOut").value = "Números pares digitados: " + pares
+                
+            }
+            
+            
+        </script>
+
+    </body>
+</html>

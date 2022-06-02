@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+   
+    <body>
+        
+        <script>
+
+            var numeros = []
+            var fibo1 = 0
+            var fibo2 = 1
+            var fibo3
+
+
+            for (let i = 0; i < 16; i++) {
+                numeros.push(fibo2)
+                fibo3 = fibo2 + fibo1
+                fibo1 = fibo2
+                fibo2 = fibo3
+                
+            }
+            console.log(numeros);
+            
+        </script>
+
+    </body>
+</html>

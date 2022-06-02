@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <!--Escreva um programa que leia números e guarde-os em um vetor. 
+        No final, mostre o vetor inteiro na tela e em seguida mostre em que posições 
+        foram digitados valores que são múltiplos de 10. -->
+    <body>
+
+        <form action="">
+
+            <input type="number" id="idNum" name="nmNum" placeholder="Número"><br><br>
+
+            <input type="button" value="Guardar número" onclick="guardar()">
+            <input type="button" value="Mostrar números" onclick="mostrar()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var numeros = []
+            var multiplos = []
+
+            function guardar() {
+                let num = document.querySelector("#idNum").value
+                numeros.push(num)
+
+            }
+
+            function mostrar() {
+
+                for (let i = 0; i < numeros.length; i++) {
+                    if ((numeros[i] % 10) == 0) {
+                       multiplos.push(numeros[i])
+                    }
+                }
+
+                document.querySelector("#idOut").value = "Todos os números: " + numeros + " e os múltiplos de 10 são: " + multiplos
+                
+            }
+            
+            
+        </script>
+
+    </body>
+</html>
