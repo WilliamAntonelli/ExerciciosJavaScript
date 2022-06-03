@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <form action="">
+
+            <input type="number" id="idNotas" name="nmNotas" placeholder="Notas"><br><br>
+
+            <input type="button" value="Guardar" onclick="guardar()"><br><br>
+            <input type="button" value="Resultado" onclick="resultado()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var todasNotas = []
+            var total = 0
+            var contador = 0
+            var maior = 0
+            var media
+            var acima = 0
+            var localMaior
+
+            function guardar() {
+
+                let nota = Number(document.querySelector("#idNotas").value)
+
+                todasNotas.push(nota)
+                total = total + nota
+                contador++
+
+                if (nota > maior) {
+                    maior = nota
+                }
+
+            }
+
+            function resultado() {
+
+                media = total / contador
+                
+                for (let i = 0; i < todasNotas.length; i++) {
+                    if (todasNotas[i] >= media) {             //encontrando aludos acima ou igual a média 
+                        acima++
+                    }
+
+                    if (todasNotas[i] = maior) {
+                        localMaior = i
+                    }
+                    
+                }
+
+                document.querySelector("#idOut").value = "Média: " + media.toFixed(1) + ". Número de alunos acima da media: "
+                + acima + ". Maior nota: " + maior + ". Posição da maior nota: " + localMaior
+            }
+
+        </script>
+    </body>
+</html>

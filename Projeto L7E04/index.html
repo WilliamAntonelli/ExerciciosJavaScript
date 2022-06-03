@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <form action="">
+
+            <input type="date" id="idData" name="nmData"><br>
+            <input type="number" id="idTemp" name="nmTemp" placeholder="Temperatura..." step="0.1">
+            <label for="idTemp">°C</label><br><br>
+
+            <input type="button" value="Guardar" onclick="guardar()"><br><br>
+
+            <input type="date" id="idDataEscolhida" name="nmDataEscolhida"><br><br>
+
+            <input type="button" value="Mostrar" onclick="mostrar()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var todasDatas = []
+            var todasTemp = []
+            var somaTemp = 0
+            var dias = 0
+            var media
+
+            function guardar() {
+
+                let data = document.querySelector("#idData").value
+                let temp = Number(document.querySelector("#idTemp").value)
+
+                todasDatas.push(data)
+                todasTemp.push(temp)
+
+                somaTemp = somaTemp + temp
+                
+                dias++
+            console.log(dias);
+            console.log(somaTemp);
+            }
+
+            function mostrar() {
+
+                let dataEscolhida = document.querySelector("#idDataEscolhida").value
+                let tempEscolhida
+
+                media = somaTemp / dias
+
+                for (let i = 0; i < todasDatas.length; i++) {
+                    if (todasDatas[i] == dataEscolhida) {
+                        tempEscolhida = todasTemp[i];
+                    }
+                    
+                }
+
+               if (tempEscolhida == media) {
+                    document.querySelector("#idOut").value = "Temperatura é igual a média: " + media + "°C"
+
+               } else if (tempEscolhida < media) {
+                    document.querySelector("#idOut").value = "A temperatura: " + tempEscolhida + "°C é menor que a media: " + media + "°C"
+
+               } else {
+                    document.querySelector("#idOut").value = "A temperatura: " + tempEscolhida + "°C é maior que a media: " + media + "°C"
+                   
+               }
+            }
+
+
+        </script>
+        
+    </body>
+</html>
