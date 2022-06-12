@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <form action="">
+
+            <label for="idNome">Nome</label><br>
+            <input type="text" id="idNome" name="nmNome"><br><br>
+
+            <input type="radio" id="idFem" name="nmSexo" checked>
+            <label for="idFem">Feminino</label>
+            <input type="radio" id="idFem" name="nmSexo">
+            <label for="idMas">Masculino</label><br><br>
+
+            <label for="idSalario">Salário</label><br>
+            <input type="number" id="idSalario" name="nmSalario"><br><br>
+
+            <input type="button" value="Guardar" onclick="guardar()">
+            <input type="button" value="Mostrar" onclick="mostrar()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var nomes = []
+            var salarios = []
+            var sexo = []
+            var selecionadas = []
+
+            function guardar() {
+
+                let umNome = document.getElementById("idNome").value
+                let isFeminino = document.getElementById("idFem").checked
+                let umSalario = document.getElementById("idSalario").value
+
+                nomes.push(umNome)
+                salarios.push(umSalario)
+                sexo.push(isFeminino)
+
+                document.getElementById("idNome").value = ""
+                document.getElementById("idSalario").value = ""
+            }
+
+            function mostrar() {
+                for (let i = 0; i < nomes.length; i++) {
+                    if (salarios[i] >= 5000 && sexo[i] == true) {  //selecionando mulheres que ganham 5000 ou mais
+                        selecionadas.push(nomes[i])
+                    }
+                    
+                }
+                
+                document.querySelector("#idOut").value = "Funcionárias mulheres que ganham mais de R$5 mil: " + selecionadas.toString()
+            }
+
+
+        </script>
+        
+    </body>
+</html>

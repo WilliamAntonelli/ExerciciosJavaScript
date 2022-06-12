@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <form action="">
+
+            <input type="text" id="idNome" name="nmNome" placeholder="Nome..."><br><br>
+
+            <input type="number" id="idIdade" name="nmIdade" placeholder="Idade..."><br><br>
+
+            <input type="button" value="Guardar" onclick="guardar()">
+            <input type="button" value="Mostrar" onclick="mostrar()"><br><br>
+
+            <output id="idOut"></output>
+
+        </form>
+
+        <script>
+
+            var nomes = []
+            var idades = []
+            var menoresNome = []
+
+            function guardar() {
+
+                let umNome = document.getElementById("idNome").value
+                let umaIdade = Number(document.getElementById("idIdade").value)
+                
+                nomes.push(umNome)
+                idades.push(umaIdade)
+           
+                document.getElementById("idNome").value = ""
+                document.getElementById("idIdade").value = ""
+            }
+
+            function mostrar() {
+                for (let i = 0; i < idades.length; i++) {
+                    if (idades[i] < 18) {
+                        menoresNome.push(nomes[i])
+                    }
+                    
+                }
+                
+                document.getElementById("idOut").value = "Menores de idade: " + menoresNome.toString()
+            }
+
+
+        </script>
+        
+    </body>
+</html>
